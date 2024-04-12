@@ -77,17 +77,16 @@
                   ></i></a>
                 <a class="google" href="#"><i class="lni-google-plus"></i></a>
               </div>
+                {{#if allProduct}}
               <div class="header-top-right float-right">
-                <a href="/login" class="header-top-button"><i
-                    class="lni-lock"
-                  ></i>
-                  Log In</a>
-                |
-                <a href="/register" class="header-top-button"><i
-                    class="lni-pencil"
-                  ></i>
-                  Register</a>
+                  Welcome, user &nbsp; <a href="/logout">Logout</a>
               </div>
+              {{else}}
+              <div class="header-top-right float-right">
+              <a href="/login" class="header-top-button"><i class="lni-lock"></i> Log In</a> |
+              <a href="/register" class="header-top-button"><i class="lni-pencil"></i> Register</a>
+              </div>
+              {{/if}}
             </div>
           </div>
         </div>
@@ -111,7 +110,7 @@
               <span class="lni-menu"></span>
               <span class="lni-menu"></span>
             </button>
-            <a href="/index-2" class="navbar-brand"><img
+            <a href="//" class="navbar-brand"><img
                 src="/assets/img/logo.png"
                 alt=""
               /></a>
@@ -128,10 +127,6 @@
                 >
                   Home
                 </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/index-2">Home 1</a>
-                  <a class="dropdown-item" href="/index-3">Home 2</a>
-                </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/category">
@@ -151,7 +146,7 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="/adlistinggrid">Ad Grid</a>
                   <a class="dropdown-item" href="/adlistinglist">Ad Listing</a>
-                  <a class="dropdown-item active" href="/ads-details">Listing
+                  <a class="dropdown-item active" href="/adsDetail">Listing
                     Detail</a>
                 </div>
               </li>
@@ -168,7 +163,7 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="/about">About Us</a>
                   <a class="dropdown-item" href="/services">Services</a>
-                  <a class="dropdown-item" href="/ads-details">Ads Details</a>
+                  <a class="dropdown-item" href="/adsDetail">Ads Details</a>
                   <a class="dropdown-item" href="/post-ads">Ads Post</a>
                   <a class="dropdown-item" href="/pricing">Packages</a>
                   <a class="dropdown-item" href="/testimonial">Testimonial</a>
@@ -216,10 +211,6 @@
             <a href="/">
               Home
             </a>
-            <ul class="dropdown">
-              <li><a href="/index-2">Home 1</a></li>
-              <li><a href="/index-3">Home 2</a></li>
-            </ul>
           </li>
           <li>
             <a href="/category">Categories</a>
@@ -231,7 +222,7 @@
             <ul class="dropdown">
               <li><a href="/adlistinggrid">Ad Grid</a></li>
               <li><a href="/adlistinglist">Ad Listing</a></li>
-              <li><a class="active" href="/ads-details">Listing Detail</a></li>
+              <li><a class="active" href="/adsDetail">Listing Detail</a></li>
             </ul>
           </li>
           <li>
@@ -239,7 +230,7 @@
             <ul class="dropdown">
               <li><a href="/about">About Us</a></li>
               <li><a href="/services">Services</a></li>
-              <li><a href="/ads-details">Ads Details</a></li>
+              <li><a href="/adsDetail">Ads Details</a></li>
               <li><a href="/post-ads">Ads Post</a></li>
               <li><a href="/pricing">Packages</a></li>
               <li><a href="/testimonial">Testimonial</a></li>
@@ -292,79 +283,46 @@
                   <div class="product-img">
                     <img
                       class="img-fluid"
-                      src="/assets/img/productinfo/img1.jpg"
+                      src="{{allDetail.images}}"
                       alt=""
                     />
                   </div>
-                  <span class="price">$1,550</span>
+                  <span class="price">${{allDetail.price}}</span>
                 </div>
                 <div class="item">
                   <div class="product-img">
                     <img
                       class="img-fluid"
-                      src="/assets/img/productinfo/img3.jpg"
+                      src="{{allDetail.images}}"
                       alt=""
                     />
                   </div>
-                  <span class="price">$1,550</span>
+                  <span class="price">${{allDetail.price}}</span>
                 </div>
                 <div class="item">
                   <div class="product-img">
                     <img
                       class="img-fluid"
-                      src="/assets/img/productinfo/img2.jpg"
+                      src="{{allDetail.images}}"
                       alt=""
                     />
                   </div>
-                  <span class="price">$1,550</span>
+                  <span class="price">${{allDetail.price}}</span>
                 </div>
               </div>
             </div>
             <div class="details-box">
               <div class="ads-details-info">
-                <h2>Apple MF839LL/A MacBook Pro 13.3-Inch Laptop</h2>
+                <h2>{{allDetail.title}}</h2>
                 <div class="details-meta">
                   <span><a href="#"><i class="lni-alarm-clock"></i>
                       7 Jan, 10:10 pm</a></span>
                   <span><a href="#"><i class="lni-map-marker"></i>
-                      New York</a></span>
+                      {{allDetail.country}}</a></span>
                   <span><a href="#"><i class="lni-eye"></i> 299 View</a></span>
                 </div>
-                <p class="mb-4">Up for sale we have a vintage Raleigh Sport
-                  Men’s Bicycle. This bike does have some general wear and
-                  surface corrosion on some of the parts but is overall in good
-                  shape. It has been checked out and does work. Brakes and gears
-                  work. Seat is fully intact. Frame and fenders are in nice
-                  shape with minimal wear. A few minor dents in the fenders but
-                  most of the paint is intact. This vintage bicycle is very well
-                  preserved and can be used the way it is or fully restored if
-                  you would like it to look newer.</p>
-                <h4 class="title-small mb-3">Specification:</h4>
-                <ul class="list-specification">
-                  <li><i class="lni-check-mark-circle"></i>
-                    256GB PCIe flash storage</li>
-                  <li><i class="lni-check-mark-circle"></i>
-                    2.7 GHz dual-core Intel Core i5</li>
-                  <li><i class="lni-check-mark-circle"></i>
-                    Turbo Boost up to 3.1GHz</li>
-                  <li><i class="lni-check-mark-circle"></i>
-                    Intel Iris Graphics 6100</li>
-                  <li><i class="lni-check-mark-circle"></i> 8GB memory</li>
-                  <li><i class="lni-check-mark-circle"></i>
-                    10 hour battery life</li>
-                  <li><i class="lni-check-mark-circle"></i>
-                    13.3" Retina Display</li>
-                  <li><i class="lni-check-mark-circle"></i>
-                    1 Year international warranty</li>
-                </ul>
                 <p class="mb-4">
-                  Up for sale we have a vintage Raleigh Sport Men’s Bicycle.
-                  This bike does have some general wear and surface corrosion on
-                  some of the parts but is overall in good shape. It has been
-                  checked out and does work. Brakes and gears work. Seat is
-                  fully intact. Frame and fenders are in nice shape with minimal
-                  wear. A few minor dents in the fenders but most of the paint
-                  is intact.
+                  {{allDetail.message}}
                 </p>
               </div>
               <div class="tag-bottom">
@@ -372,15 +330,15 @@
                   <ul class="advertisement">
                     <li>
                       <p><strong><i class="lni-folder"></i> Categories:</strong>
-                        <a href="#">Electronics</a></p>
+                        <a href="#">{{allDetail.category}}</a></p>
                     </li>
                     <li>
                       <p><strong><i class="lni-archive"></i> Condition:</strong>
-                        New</p>
+                        {{allDetail.condition}}</p>
                     </li>
                     <li>
                       <p><strong><i class="lni-package"></i> Brand:</strong>
-                        <a href="#">Apple</a></p>
+                        <a href="#">{{allDetail.brand}}</a></p>
                     </li>
                   </ul>
                 </div>
@@ -435,7 +393,7 @@
                         /></a>
                     </div>
                     <div class="agent-details">
-                      <h3><a href="#">Tahmina Anny</a></h3>
+                      <h3><a href="#">{{allDetail.firstName}}</a></h3>
                       <span><i class="lni-phone-handset"></i>(123) 123-456</span>
                     </div>
                   </div>

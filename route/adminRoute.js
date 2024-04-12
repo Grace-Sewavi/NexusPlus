@@ -1,5 +1,5 @@
 const express = require("express")
-const { getRegisterAdmin, getAdminLogin, postRegisterAdmin } = require("../controllers/adminControl")
+const { getRegisterAdmin, getAdminLogin, postRegisterAdmin } = require("../controllers/adminController")
 const router = express.Router()
 
 router.get("/adminSignUp", getRegisterAdmin)

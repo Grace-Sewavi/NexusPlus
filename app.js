@@ -2,7 +2,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const app = express();
 require("dotenv").config();
-const userRoutes = require("./route/Userrout");
+const userRoutes = require("./route/userRoutes");
 const adminRoutes = require("./route/adminRoute")
 const mongoose = require("mongoose");
 const cookies = require("cookie-parser")

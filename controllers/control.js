@@ -6,14 +6,22 @@ const contactModel = require("../model/contact");
 const { spName } = require("../middlewares/upload");
 
 const getHome = async (req, res) => {
-  const product = await productModel.find();
+try {
+  if (req.user) {
+    const product = await productModel.find();
   const allProduct = await product.map((item) => {
     return {
-      ...item.toObject(),
-      display: item.images[0] || "assets/img/featured/img-2.jpg",
-    };
-  });
-  res.render("index", { allProduct });
+            ...item.toObject(),
+            display: item.images[0] || "assets/img/featured/img-2.jpg",
+          };
+        });
+    res.render("index", { allProduct });
+  } else {
+    res.render("index");
+  }
+} catch (err) {
+  res.render("index");
+}
 };
 
 const postRegister = async (req, res) => {
@@ -76,12 +84,22 @@ const postLogin = async (req, res) => {
     const token = await jwt.sign({ id: checkUser._id }, process.env.JWTKEY, {
       expiresIn: "1h",
     });
-    res.cookie("/", token);
-    return res.redirect("/");
+    res.cookie("index-2", token);
+    return res.redirect("index-2");
   } else {
     return res.render("login", { error: "Email or Password mismatch" });
   }
 };
+
+const logout = (req, res) => {
+  if (req.user) {
+    res.clearCookie("nexusPlus");
+    res.redirect("/login");
+  } else {
+    res.redirect("/login");
+  }
+};
+
 const postAds = async (req, res) => {
   const {
     title,
@@ -472,18 +490,15 @@ const getTestimonial = async(req, res) => {
   }
 };
 const getIndex2 = async(req, res) => {
-  try {
-    if (req.user) {
-      const userId = req.body.id;
-      const currentUser = await userModel.findOne({ _id: userId });
-      res.render("index-2", { currentUser });
-    } else {
-      res.render("index-2");
-    }
-  } catch (error) {
-    console.log(error.message);
-    res.render("error", { error: error.message });
-  }
+  
+      const product = await productModel.find()
+      const allProduct = await product.map((item) => {
+        return {
+          ...item.toObject(),
+          display: item.images[0] || "assets/img/featured/img-2.jpg",
+        };
+      });
+      res.render("index-2", {allProduct});
 };
 const getIndex3 = async(req, res) => {
   try {
@@ -533,4 +548,5 @@ module.exports = {
   getIndex2,
   getIndex3,
   postContact,
+  logout
 };

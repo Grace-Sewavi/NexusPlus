@@ -38,7 +38,7 @@ const postRegisterAdmin = async (req, res) => {
       password: password,
     });
     return res.render("admin-login", {
-      success: "Amount Created successfully Please kindly login",
+      success: "Account Created successfully, Please kindly login",
     });
   } catch (error) {
     console.log(error.message);

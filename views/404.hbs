@@ -69,17 +69,16 @@
                   ></i></a>
                 <a class="google" href="#"><i class="lni-google-plus"></i></a>
               </div>
-              <div class="header-top-right float-right">
-                <a href="/login" class="header-top-button"><i
-                    class="lni-lock"
-                  ></i>
-                  Log In</a>
-                |
-                <a href="/register" class="header-top-button"><i
-                    class="lni-pencil"
-                  ></i>
-                  Register</a>
-              </div>
+           {{#if allProduct}}
+          <div class="header-top-right float-right">
+              Welcome, user &nbsp; <a href="/logout">Logout</a>
+          </div>
+          {{else}}
+          <div class="header-top-right float-right">
+          <a href="/login" class="header-top-button"><i class="lni-lock"></i> Log In</a> |
+          <a href="/register" class="header-top-button"><i class="lni-pencil"></i> Register</a>
+          </div>
+          {{/if}}
             </div>
           </div>
         </div>
@@ -122,7 +121,7 @@
                 </a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="index-2">Home 1</a>
-                  <a class="dropdown-item" href="index-3">Home 2</a>
+                 
                 </div>
               </li>
               <li class="nav-item">
@@ -213,7 +212,7 @@
             </a>
             <ul class="dropdown">
               <li><a href="/index-2">Home 1</a></li>
-              <li><a href="/index-3">Home 2</a></li>
+
             </ul>
           </li>
           <li>

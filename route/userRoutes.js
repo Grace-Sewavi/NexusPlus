@@ -31,7 +31,7 @@ const {
   getTestimonial,
   postContact,
   getIndex2,
-  getIndex3,
+  logout
 } = require("../controllers/control");
 
 const router = express.Router();
@@ -65,7 +65,8 @@ router.get("/pricing", checkUser, getPricing);
 router.get("/single-post", checkUser, getSinglePost);
 router.get("/testimonial", checkUser, getTestimonial);
 router.get("/index-2", checkUser, getIndex2)
-router.get("/index-3", checkUser, getIndex3)
 router.post("/contact", checkUser, postContact);
+router.get("/logout",checkUser, logout)
+
 
 module.exports = router;

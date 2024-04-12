@@ -69,17 +69,16 @@
                   ></i></a>
                 <a class="google" href="#"><i class="lni-google-plus"></i></a>
               </div>
-              <div class="header-top-right float-right">
-                <a href="login.html" class="header-top-button"><i
-                    class="lni-lock"
-                  ></i>
-                  Log In</a>
-                |
-                <a href="register.html" class="header-top-button"><i
-                    class="lni-pencil"
-                  ></i>
-                  Register</a>
-              </div>
+            {{#if allProduct}}
+            <div class="header-top-right float-right">
+                Welcome, user &nbsp; <a href="/logout">Logout</a>
+            </div>
+            {{else}}
+            <div class="header-top-right float-right">
+            <a href="/login" class="header-top-button"><i class="lni-lock"></i> Log In</a> |
+            <a href="/register" class="header-top-button"><i class="lni-pencil"></i> Register</a>
+            </div>
+            {{/if}}
             </div>
           </div>
         </div>
@@ -122,7 +121,6 @@
                 </a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="index-2.html">Home 1</a>
-                  <a class="dropdown-item" href="index-3.html">Home 2</a>
                 </div>
               </li>
               <li class="nav-item">
@@ -144,7 +142,7 @@
                   <a class="dropdown-item" href="adlistinggrid.html">Ad Grid</a>
                   <a class="dropdown-item active" href="adlistinglist.html">Ad
                     Listing</a>
-                  <a class="dropdown-item" href="ads-details.html">Listing
+                  <a class="dropdown-item" href="/adsDetail.html">Listing
                     Detail</a>
                 </div>
               </li>
@@ -161,7 +159,7 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="about.html">About Us</a>
                   <a class="dropdown-item" href="services.html">Services</a>
-                  <a class="dropdown-item" href="ads-details.html">Ads Details</a>
+                  <a class="dropdown-item" href="/adsDetail.html">Ads Details</a>
                   <a class="dropdown-item" href="post-ads.html">Ads Post</a>
                   <a class="dropdown-item" href="pricing.html">Packages</a>
                   <a
@@ -214,7 +212,6 @@
             </a>
             <ul class="dropdown">
               <li><a href="index-2.html">Home 1</a></li>
-              <li><a href="index-3.html">Home 2</a></li>
             </ul>
           </li>
           <li>
@@ -227,7 +224,7 @@
             <ul class="dropdown">
               <li><a href="adlistinggrid.html">Ad Grid</a></li>
               <li><a class="active" href="adlistinglist.html">Ad Listing</a></li>
-              <li><a href="ads-details.html">Listing Detail</a></li>
+              <li><a href="/adsDetail.html">Listing Detail</a></li>
             </ul>
           </li>
           <li>
@@ -235,7 +232,7 @@
             <ul class="dropdown">
               <li><a href="about.html">About Us</a></li>
               <li><a href="services.html">Services</a></li>
-              <li><a href="ads-details.html">Ads Details</a></li>
+              <li><a href="/adsDetail.html">Ads Details</a></li>
               <li><a href="post-ads.html">Ads Post</a></li>
               <li><a href="pricing.html">Packages</a></li>
               <li><a href="testimonial.html">Testimonial</a></li>
@@ -423,7 +420,7 @@
                             <a href="#">{{category}} > </a>
                             <a href="#">{{condition}}</a>
                           </div>
-                          <h4><a href="ads-details.html">{{title}}</a></h4>
+                          <h4><a href="/adsDetail.html">{{title}}</a></h4>
                           <div class="meta-tag">
                             <span>
                               <a href="#"><i class="lni-user"></i>
@@ -441,7 +438,7 @@
                           <div class="listing-bottom">
                             <h3 class="price float-left">${{price}}</h3>
                             <a
-                              href="ads-details.html"
+                              href="/adsDetail.html"
                               class="btn btn-common float-right"
                             >View Details</a>
                           </div>
@@ -472,7 +469,7 @@
                             <a href="#">Electronic > </a>
                             <a href="#">Apple</a>
                           </div>
-                          <h4><a href="ads-details.html">Apple Macbook Pro ...</a></h4>
+                          <h4><a href="/adsDetail.html">Apple Macbook Pro ...</a></h4>
                           <div class="meta-tag">
                             <span>
                               <a href="#"><i class="lni-user"></i>
@@ -492,7 +489,7 @@
                           <div class="listing-bottom">
                             <h3 class="price float-left">$289.00</h3>
                             <a
-                              href="ads-details.html"
+                              href="/adsDetail.html"
                               class="btn btn-common float-right"
                             >View Details</a>
                           </div>
@@ -522,7 +519,7 @@
                             <a href="#">Electronic > </a>
                             <a href="#">Apple</a>
                           </div>
-                          <h4><a href="ads-details.html">Mercedes Benz E200 ...</a></h4>
+                          <h4><a href="/adsDetail.html">Mercedes Benz E200 ...</a></h4>
                           <div class="meta-tag">
                             <span>
                               <a href="#"><i class="lni-user"></i>
@@ -542,7 +539,7 @@
                           <div class="listing-bottom">
                             <h3 class="price float-left">$199.80</h3>
                             <a
-                              href="ads-details.html"
+                              href="/adsDetail.html"
                               class="btn btn-common float-right"
                             >View Details</a>
                           </div>
@@ -569,7 +566,7 @@
                             <a href="#">Electronic > </a>
                             <a href="#">Apple</a>
                           </div>
-                          <h4><a href="ads-details.html">Brown Leather Bag ...</a></h4>
+                          <h4><a href="/adsDetail.html">Brown Leather Bag ...</a></h4>
                           <div class="meta-tag">
                             <span>
                               <a href="#"><i class="lni-user"></i>
@@ -589,7 +586,7 @@
                           <div class="listing-bottom">
                             <h3 class="price float-left">$206.90</h3>
                             <a
-                              href="ads-details.html"
+                              href="/adsDetail.html"
                               class="btn btn-common float-right"
                             >View Details</a>
                           </div>
@@ -621,7 +618,7 @@
                             <a href="#">{{category}} > </a>
                             <a href="#">{{condition}}</a>
                           </div>
-                          <h4><a href="ads-details.html">{{title}}</a></h4>
+                          <h4><a href="/adsDetail.html">{{title}}</a></h4>
                           <div class="meta-tag">
                             <span>
                               <a href="#"><i class="lni-user"></i>
@@ -639,7 +636,7 @@
                           <div class="listing-bottom">
                             <h3 class="price float-left">${{price}}</h3>
                             <a
-                              href="ads-details.html"
+                              href="/adsDetail.html"
                               class="btn btn-common float-right"
                             >View Details</a>
                           </div>
@@ -670,7 +667,7 @@
                             <a href="#">Electronic > </a>
                             <a href="#">Apple</a>
                           </div>
-                          <h4><a href="ads-details.html">Apple Macbook Pro ...</a></h4>
+                          <h4><a href="/adsDetail.html">Apple Macbook Pro ...</a></h4>
                           <div class="meta-tag">
                             <span>
                               <a href="#"><i class="lni-user"></i>
@@ -690,7 +687,7 @@
                           <div class="listing-bottom">
                             <h3 class="price float-left">$289.00</h3>
                             <a
-                              href="ads-details.html"
+                              href="/adsDetail.html"
                               class="btn btn-common float-right"
                             >View Details</a>
                           </div>
@@ -717,7 +714,7 @@
                             <a href="#">Electronic > </a>
                             <a href="#">Apple</a>
                           </div>
-                          <h4><a href="ads-details.html">Mercedes Benz E200 ...</a></h4>
+                          <h4><a href="/adsDetail.html">Mercedes Benz E200 ...</a></h4>
                           <div class="meta-tag">
                             <span>
                               <a href="#"><i class="lni-user"></i>
@@ -737,7 +734,7 @@
                           <div class="listing-bottom">
                             <h3 class="price float-left">$199.80</h3>
                             <a
-                              href="ads-details.html"
+                              href="/adsDetail.html"
                               class="btn btn-common float-right"
                             >View Details</a>
                           </div>
@@ -767,7 +764,7 @@
                             <a href="#">Electronic > </a>
                             <a href="#">Apple</a>
                           </div>
-                          <h4><a href="ads-details.html">Brown Leather Bag ...</a></h4>
+                          <h4><a href="/adsDetail.html">Brown Leather Bag ...</a></h4>
                           <div class="meta-tag">
                             <span>
                               <a href="#"><i class="lni-user"></i>
@@ -787,7 +784,7 @@
                           <div class="listing-bottom">
                             <h3 class="price float-left">$206.90</h3>
                             <a
-                              href="ads-details.html"
+                              href="/adsDetail.html"
                               class="btn btn-common float-right"
                             >View Details</a>
                           </div>
