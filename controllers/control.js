@@ -17,7 +17,14 @@ try {
         });
     res.render("index", { allProduct });
   } else {
-    res.render("index");
+    const product = await productModel.find();
+    const allProduct = await product.map((item) => {
+      return {
+              ...item.toObject(),
+              display: item.images[0] || "assets/img/featured/img-2.jpg",
+            };
+          });
+    res.render("index", {allProduct});
   }
 } catch (err) {
   res.render("index");
