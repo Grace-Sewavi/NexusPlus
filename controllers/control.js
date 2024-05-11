@@ -92,7 +92,7 @@ const postLogin = async (req, res) => {
       expiresIn: "1h",
     });
     res.cookie("index-2", token);
-    return res.redirect("index-2");
+    return res.redirect("/index-2");
   } else {
     return res.render("login", { error: "Email or Password mismatch" });
   }
