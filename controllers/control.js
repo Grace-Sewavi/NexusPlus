@@ -91,8 +91,8 @@ const postLogin = async (req, res) => {
     const token = await jwt.sign({ id: checkUser._id }, process.env.JWTKEY, {
       expiresIn: "1h",
     });
-    res.cookie("index-2", token);
-    return res.redirect("/index-2");
+    res.cookie("nexusPlus", token);
+    return res.redirect("/");
   } else {
     return res.render("login", { error: "Email or Password mismatch" });
   }
