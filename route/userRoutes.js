@@ -36,7 +36,7 @@ const {
 
 const router = express.Router();
 
-router.get("/", getHome, checkUser, checkUser);
+router.get("/",checkUser, getHome);
 router.get("/post-ads", checkUser, getAds);
 router.get("/register", getRegister);
 router.get("/login",  getLogin);

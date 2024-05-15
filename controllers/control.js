@@ -177,7 +177,7 @@ const postAds = async (req, res) => {
 };
 
 const getDetail = async (req, res) => {
-  const userid = req.params.id;
+  const userid = req.params.id
   const allDetail = await productModel.findOne({ _id: userid });
   res.render("ads-details", { allDetail });
 };
