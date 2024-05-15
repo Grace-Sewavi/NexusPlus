@@ -362,7 +362,7 @@
         <div class="container">
             <h1 class="section-title">Latest Products</h1>
             <div class="row">
-                {{#each allProduct}}
+                {{#each productInfo}}
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
                     <div class="featured-box">
                         <figure>
@@ -370,7 +370,7 @@
                                 <span class="bg-green"><i class="lni-heart"></i></span>
                                 <span><i class="lni-bookmark"></i></span>
                             </div>
-                            <a href="#"><img class="img-fluid" src="{{images}}" alt=""></a>
+                            <a href="#"><img class="img-fluid" src={{showPhoto}} alt=""></a>
                         </figure>
                         <div class="feature-content">
                             <div class="product">

@@ -43,7 +43,7 @@ router.get("/login",  getLogin);
 router.post("/login", checkUser, postLogin);
 router.post("/register", checkUser, postRegister);
 router.post("/post-ads", checkUser, postAds);
-router.get("/adsDetail/:userid", checkUser, getDetail);
+router.get("/adsDetail/:id", checkUser, getDetail);
 router.get("/services", checkUser, getService);
 router.get("/about", checkUser, getAbout);
 router.get("/account-favourite-ads", checkUser, getAccountFavourite);

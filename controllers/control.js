@@ -9,25 +9,25 @@ const getHome = async (req, res) => {
 try {
   if (req.user) {
     const product = await productModel.find();
-  const allProduct = await product.map((item) => {
+  const productInfo = await product.map((item) => {
     return {
             ...item.toObject(),
-            display: item.images[0] || "assets/img/featured/img-2.jpg",
+            showPhoto: item.images[0] || "assets/img/featured/img-2.jpg",
           };
         });
-    res.render("index", { allProduct });
+    res.render("index", { productInfo });
   } else {
     const product = await productModel.find();
-    const allProduct = await product.map((item) => {
+    const productInfo = await product.map((item) => {
       return {
               ...item.toObject(),
-              display: item.images[0] || "assets/img/featured/img-2.jpg",
+              showPhoto: item.images[0] || "assets/img/featured/img-2.jpg",
             };
           });
-    res.render("index", {allProduct});
+    res.render("index", {productInfo});
   }
 } catch (err) {
-  res.render("index");
+  console.log(err.message);
 }
 };
 
@@ -177,7 +177,7 @@ const postAds = async (req, res) => {
 };
 
 const getDetail = async (req, res) => {
-  const userid = req.params.userid;
+  const userid = req.params.id;
   const allDetail = await productModel.findOne({ _id: userid });
   res.render("ads-details", { allDetail });
 };
@@ -187,7 +187,7 @@ const getAdlistingGrid = async (req, res) => {
   const allProduct = await product.map((item) => {
     return {
       ...item.toObject(),
-      display: item.images[0] || "assets/img/featured/img-2.jpg",
+      showPhoto: item.images[0] || "assets/img/featured/img-2.jpg",
     };
   });
   res.render("adlistinggrid", { allProduct });
@@ -198,14 +198,20 @@ const getAdlistingList = async (req, res) => {
   const allProduct = await product.map((item) => {
     return {
       ...item.toObject(),
-      display: item.images[0] || "assets/img/featured/img-2.jpg",
+      showPhoto: item.images[0] || "assets/img/featured/img-2.jpg",
     };
   });
   res.render("adlistinglist", { allProduct });
 };
 
 const getCategory = async (req, res) => {
-  const allProduct = await productModel.find().sort({ date: -1 });
+  const product = await productModel.find();
+  const allProduct = await product.map((item) => {
+    return {
+      ...item.toObject(),
+      showPhoto: item.images[0] || "assets/img/featured/img-2.jpg",
+    };
+  });
   res.render("category", { allProduct });
 };
 
@@ -502,7 +508,7 @@ const getIndex2 = async(req, res) => {
       const allProduct = await product.map((item) => {
         return {
           ...item.toObject(),
-          display: item.images[0] || "assets/img/featured/img-2.jpg",
+          showPhoto: item.images[0] || "assets/img/featured/img-2.jpg",
         };
       });
       res.render("index-2", {allProduct});
